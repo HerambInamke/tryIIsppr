@@ -1,0 +1,76 @@
+---
+const galleryImages = [
+  {
+    url: "https://images.pexels.com/photos/4924154/pexels-photo-4924154.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Community garden project",
+    title: "Urban Gardens",
+    location: "Metro City"
+  },
+  {
+    url: "https://images.pexels.com/photos/3698534/pexels-photo-3698534.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Team building a structure",
+    title: "Sustainable Building",
+    location: "Rural District"
+  },
+  {
+    url: "https://images.pexels.com/photos/6647019/pexels-photo-6647019.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Farm planting",
+    title: "Organic Farming",
+    location: "Valley Region"
+  },
+  {
+    url: "https://images.pexels.com/photos/7656138/pexels-photo-7656138.jpeg?auto=compress&cs=tinysrgb&w=600",
+    alt: "Conservation team at work",
+    title: "Conservation Efforts",
+    location: "National Park"
+  }
+];
+---
+
+<section class="py-20 bg-earth-50 relative">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-serif text-earth-900 mb-4" data-aos="fade-up">Our Fieldwork in Action</h2>
+      <p class="text-lg text-earth-700" data-aos="fade-up" data-aos-delay="100">
+        Browse a selection of our recent projects and see firsthand the impact of our community-based initiatives.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {galleryImages.map((image, index) => (
+        <div 
+          class="group relative overflow-hidden rounded-lg shadow-lg h-80 transition-transform hover:-translate-y-2 duration-300"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <img 
+            src={image.url} 
+            alt={image.alt} 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-90"></div>
+          <div class="absolute bottom-0 left-0 p-6">
+            <h3 class="text-xl text-white font-medium mb-1">{image.title}</h3>
+            <p class="text-white/70 text-sm mb-4 font-mono">{image.location}</p>
+            <span class="inline-block px-3 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur-sm transition-colors duration-300 group-hover:bg-vibrant-500">
+              View Project
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <a 
+        href="/gallery" 
+        class="inline-flex items-center px-5 py-3 border border-earth-300 text-earth-700 rounded-md hover:bg-earth-200 transition-colors text-center font-medium"
+        data-aos="fade-up"
+      >
+        View All Projects
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

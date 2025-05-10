@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestimonialPreview from '../components/TestimonialPreview.astro';
+import GalleryPreview from '../components/GalleryPreview.astro';
+import ImageCarousel from '../components/ImageCarousel.astro';
+
+const carouselImages = [
+  {
+    url: "https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    alt: "Team doing fieldwork",
+    title: "Community Impact",
+    location: "Metro City"
+  },
+  {
+    url: "https://images.pexels.com/photos/6647037/pexels-photo-6647037.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    alt: "Community garden project",
+    title: "Urban Gardens",
+    location: "Downtown District"
+  },
+  {
+    url: "https://images.pexels.com/photos/8474484/pexels-photo-8474484.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    alt: "Team planning session",
+    title: "Project Planning",
+    location: "Innovation Hub"
+  }
+];
+---
+
+<Layout title="Fieldwork - Community Impact Through Hands-on Projects">
+  <!-- Hero Section with Carousel -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <ImageCarousel images={carouselImages} />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+      <div class="texture-overlay"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-4 text-shadow-hero animate-fade-in">
+          Making a Difference <br class="hidden sm:block" />
+          <span class="text-vibrant-400">Where It Matters Most</span>
+        </h1>
+        <p class="text-xl text-white/80 mb-8 animate-slide-up">
+          We build communities and transform environments through dedicated fieldwork and sustainable practices.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/about" 
+            class="px-8 py-3 bg-forest-600 text-white rounded-md hover:bg-forest-700 transition-all duration-300 hover:scale-105 text-lg font-medium"
+          >
+            Learn Our Story
+          </a>
+          <a 
+            href="/gallery" 
+            class="px-8 py-3 border-2 border-white/70 text-white rounded-md hover:bg-white/10 transition-all duration-300 hover:scale-105 text-lg font-medium"
+          >
+            View Our Work
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center text-white">
+      <span class="text-sm uppercase tracking-wider">Discover More</span>
+      <div class="mt-2 animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-20 bg-white relative">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <div class="relative">
+              <img 
+                src="https://images.pexels.com/photos/6647037/pexels-photo-6647037.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                alt="Community garden project" 
+                class="rounded-lg shadow-xl object-cover"
+              />
+              <div class="absolute -bottom-5 -right-5 bg-vibrant-500 rounded-lg p-4 shadow-lg hidden md:block">
+                <span class="text-4xl font-serif text-white">10+</span>
+                <p class="text-white text-sm">Years of Impact</p>
+              </div>
+            </div>
+          </div>
+          
+          <div data-aos="fade-left" data-aos-delay="100">
+            <h2 class="text-3xl md:text-4xl font-serif text-earth-900 mb-6">Our Approach to <span class="text-forest-600">Sustainable Fieldwork</span></h2>
+            <p class="text-lg text-earth-700 mb-6">
+              We believe that meaningful change happens when communities take an active role in shaping their environments. Our fieldwork initiatives combine expert knowledge with local wisdom to create sustainable solutions.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="bg-forest-100 p-2 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-medium text-earth-900">Community Engagement</h3>
+                  <p class="text-earth-700">Building partnerships with local stakeholders and empowering community leadership.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-forest-100 p-2 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-medium text-earth-900">Sustainable Practices</h3>
+                  <p class="text-earth-700">Implementing environmentally-sound methods that balance ecological health with community needs.</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="bg-forest-100 p-2 rounded-full mr-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-medium text-earth-900">Knowledge Transfer</h3>
+                  <p class="text-earth-700">Sharing skills and experience through hands-on training and educational programs.</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8">
+              <a href="/about" class="text-forest-600 font-medium flex items-center hover:text-forest-700 transition-colors">
+                Learn more about our mission
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Gallery Preview Section -->
+  <GalleryPreview />
+  
+  <!-- Impact Stats Section -->
+  <section class="py-20 bg-forest-700 text-white relative">
+    <div class="texture-overlay opacity-10"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif mb-4" data-aos="fade-up">Our Impact By The Numbers</h2>
+        <p class="text-lg text-white/80" data-aos="fade-up" data-aos-delay="100">
+          Over the years, we've made meaningful contributions to communities and environments.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="bg-white/10 rounded-lg p-6 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="0">
+          <div class="text-4xl font-serif font-bold mb-2 text-vibrant-400">50+</div>
+          <p class="text-white/80">Communities Served</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-4xl font-serif font-bold mb-2 text-vibrant-400">10k+</div>
+          <p class="text-white/80">Volunteer Hours</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-4xl font-serif font-bold mb-2 text-vibrant-400">75+</div>
+          <p class="text-white/80">Projects Completed</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-4xl font-serif font-bold mb-2 text-vibrant-400">25k</div>
+          <p class="text-white/80">Trees Planted</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonial Preview Section -->
+  <TestimonialPreview />
+  
+  <!-- CTA Section -->
+  <section class="py-20 bg-clay-100 relative">
+    <div class="texture-overlay opacity-5"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="grid md:grid-cols-2">
+          <div class="p-8 md:p-12 flex flex-col justify-center" data-aos="fade-right">
+            <h2 class="text-3xl font-serif text-earth-900 mb-4">Ready to Make an Impact?</h2>
+            <p class="text-lg text-earth-700 mb-6">
+              Join our community of passionate individuals and organizations dedicated to creating positive change through fieldwork.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="/contact#form" 
+                class="px-6 py-3 bg-forest-600 text-white rounded-md hover:bg-forest-700 transition-colors text-center font-medium"
+              >
+                Get Started
+              </a>
+              <a 
+                href="/contact" 
+                class="px-6 py-3 border border-earth-300 text-earth-700 rounded-md hover:bg-earth-100 transition-colors text-center font-medium"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+          <div class="relative h-64 md:h-auto" data-aos="fade-left">
+            <img 
+              src="https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=800" 
+              alt="Team collaboration" 
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>

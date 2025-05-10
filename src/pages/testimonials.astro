@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const testimonials = [
+  {
+    quote: "Their fieldwork approach completely transformed our community garden project. The team's expertise and hands-on involvement made all the difference in creating a sustainable space that continues to thrive years later.",
+    author: "Sarah Johnson",
+    role: "Community Leader",
+    organization: "Metro City Community Alliance",
+    image: "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=300",
+    project: "Urban Gardens Initiative"
+  },
+  {
+    quote: "We've partnered with Fieldwork on multiple conservation initiatives, and their dedication to sustainable practices is unmatched in the industry. They bring scientific rigor combined with practical knowledge that leads to measurable environmental improvements.",
+    author: "Michael Chen",
+    role: "Environmental Director",
+    organization: "EcoSystems Foundation",
+    image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300",
+    project: "Watershed Protection Program"
+  },
+  {
+    quote: "The knowledge and skills our team gained through Fieldwork's training programs have been invaluable for our ongoing environmental restoration efforts. Their train-the-trainer approach ensured the impact continues long after the initial project ended.",
+    author: "Elena Rodriguez",
+    role: "Project Manager",
+    organization: "Green Valley Restoration",
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300",
+    project: "Habitat Restoration"
+  },
+  {
+    quote: "Working with Fieldwork changed how our entire municipality approaches green infrastructure. Their collaborative methods brought together stakeholders who had previously been at odds, finding common ground and sustainable solutions.",
+    author: "James Wilson",
+    role: "City Planner",
+    organization: "Riverside Municipality",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300",
+    project: "Green Infrastructure Implementation"
+  },
+  {
+    quote: "As a small non-profit, we needed expertise we couldn't afford to have in-house. Fieldwork not only provided the technical knowledge for our reforestation project but also trained our volunteers in best practices that we continue to use today.",
+    author: "Aisha Patel",
+    role: "Executive Director",
+    organization: "Forest Renewal Trust",
+    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
+    project: "Community Reforestation"
+  },
+  {
+    quote: "The educational curriculum Fieldwork developed for our school's environmental program has engaged students like never before. The hands-on activities connect classroom learning to real-world environmental challenges in our community.",
+    author: "Robert Kim",
+    role: "School Principal",
+    organization: "Valley View Academy",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
+    project: "Environmental Education Initiative"
+  }
+];
+---
+
+<Layout title="Testimonials - Client and Partner Experiences" description="Read testimonials from our clients, partners, and community members about their experiences working with our fieldwork team.">
+  <!-- Page Header -->
+  <section class="relative pt-32 pb-16 bg-forest-700 text-white">
+    <div class="texture-overlay opacity-10"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6" data-aos="fade-up">Testimonials</h1>
+        <p class="text-xl text-white/80" data-aos="fade-up" data-aos-delay="100">
+          What our partners and community members have to say about working with us
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Testimonial -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto bg-clay-100 rounded-2xl overflow-hidden shadow-xl" data-aos="fade-up">
+        <div class="grid md:grid-cols-2">
+          <div class="p-8 md:p-12 flex flex-col justify-center">
+            <div class="text-5xl text-clay-300 font-serif">"</div>
+            <blockquote class="text-lg text-earth-800 italic mb-6">
+              When we first partnered with Fieldwork, we expected expertise. What we didn't expect was how deeply they would integrate with our community, building relationships and trust that made our conservation project not just successful, but transformative for everyone involved.
+            </blockquote>
+            <div class="flex items-center">
+              <img 
+                src="https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=300" 
+                alt="Thomas Greenfield" 
+                class="w-14 h-14 rounded-full object-cover mr-4"
+              />
+              <div>
+                <div class="font-medium text-earth-900">Thomas Greenfield</div>
+                <div class="text-sm text-earth-600">Conservation Director, National Wildlife Federation</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative h-64 md:h-auto order-first md:order-last">
+            <img 
+              src="https://images.pexels.com/photos/14731590/pexels-photo-14731590.jpeg?auto=compress&cs=tinysrgb&w=800" 
+              alt="Team in the field" 
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Grid -->
+  <section class="py-16 bg-earth-50 relative">
+    <div class="texture-overlay opacity-5"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              class="bg-white rounded-lg p-8 shadow-md relative"
+              data-aos="fade-up"
+              data-aos-delay={index % 3 * 100}
+            >
+              <div class="absolute top-0 left-10 transform -translate-y-1/2 text-6xl text-clay-300 font-serif">"</div>
+              <blockquote class="mb-6 relative">
+                <p class="text-earth-700 italic">{testimonial.quote}</p>
+              </blockquote>
+              <div class="flex items-center">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.author} 
+                  class="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <div class="font-medium text-earth-900">{testimonial.author}</div>
+                  <div class="text-sm text-earth-600">{testimonial.role}</div>
+                  <div class="text-sm text-forest-600">{testimonial.organization}</div>
+                </div>
+              </div>
+              <div class="mt-4 pt-4 border-t border-earth-100">
+                <span class="text-xs uppercase tracking-wider text-earth-500">Project:</span>
+                <span class="text-sm font-medium text-earth-700 ml-1">{testimonial.project}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Video Testimonial Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-serif text-earth-900 mb-4" data-aos="fade-up">Hear From Our Partners</h2>
+        <p class="text-lg text-earth-700" data-aos="fade-up" data-aos-delay="100">
+          Watch video testimonials from our community partners and collaborators
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto bg-earth-50 rounded-lg p-8 shadow-md" data-aos="fade-up">
+        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-earth-200 flex items-center justify-center">
+          <!-- This would be replaced with an actual video embed in a production site -->
+          <div class="text-center p-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-earth-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p class="text-earth-600 text-lg">Video testimonial placeholder</p>
+            <p class="text-earth-500 text-sm mt-2">Community Reforestation Project Partner Interview</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Share Your Story Section -->
+  <section class="py-16 bg-clay-600 text-white relative">
+    <div class="texture-overlay opacity-10"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-serif mb-6" data-aos="fade-up">Share Your Story</h2>
+        <p class="text-xl text-white/80 mb-8" data-aos="fade-up" data-aos-delay="100">
+          Have you worked with us on a project? We'd love to hear about your experience.
+        </p>
+        <a 
+          href="/contact#testimonial-form" 
+          class="inline-block px-8 py-3 bg-white text-clay-700 rounded-md hover:bg-white/90 transition-colors text-lg font-medium"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Submit Your Testimonial
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

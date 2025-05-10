@@ -1,0 +1,279 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const teamMembers = [
+  {
+    name: "Emily Johnson",
+    role: "Executive Director",
+    bio: "Emily has over 15 years of experience in environmental conservation and community development. She founded Fieldwork to bridge the gap between research and practical application.",
+    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300"
+  },
+  {
+    name: "David Martinez",
+    role: "Field Operations Manager",
+    bio: "With a background in sustainable agriculture and construction, David oversees the execution of our fieldwork projects, ensuring quality and adherence to sustainable practices.",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=300"
+  },
+  {
+    name: "Aisha Wong",
+    role: "Community Relations Director",
+    bio: "Aisha specializes in building partnerships with local communities and organizations. Her work ensures our projects are aligned with community needs and priorities.",
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300"
+  },
+  {
+    name: "Michael Thompson",
+    role: "Research Coordinator",
+    bio: "Michael brings scientific rigor to our projects, conducting assessments and developing methodologies that maximize environmental and social benefits.",
+    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=300"
+  }
+];
+
+const milestones = [
+  {
+    year: "2014",
+    title: "Foundation",
+    description: "Fieldwork was established with a mission to connect expertise with community needs."
+  },
+  {
+    year: "2016",
+    title: "First Major Project",
+    description: "Completed our first large-scale community garden initiative in Metro City."
+  },
+  {
+    year: "2018",
+    title: "Expansion",
+    description: "Expanded operations to three new regions and doubled our team size."
+  },
+  {
+    year: "2020",
+    title: "Research Partnership",
+    description: "Formed a research partnership with National University to develop innovative fieldwork methodologies."
+  },
+  {
+    year: "2022",
+    title: "Sustainability Award",
+    description: "Received the Regional Sustainability Award for our watershed protection project."
+  },
+  {
+    year: "2024",
+    title: "Global Impact",
+    description: "Launched our international program, bringing our approach to communities worldwide."
+  }
+];
+---
+
+<Layout title="About Us - Our Mission and Values" description="Learn about our mission, our team, and the values that drive our fieldwork projects and community initiatives.">
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 bg-forest-700 text-white">
+    <div class="texture-overlay opacity-10"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6" data-aos="fade-up">Our Story</h1>
+        <p class="text-xl text-white/80" data-aos="fade-up" data-aos-delay="100">
+          Driven by purpose, guided by values, committed to impact
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Mission Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <img 
+              src="https://images.pexels.com/photos/8474484/pexels-photo-8474484.jpeg?auto=compress&cs=tinysrgb&w=800" 
+              alt="Team planning session" 
+              class="rounded-lg shadow-xl"
+            />
+          </div>
+          
+          <div data-aos="fade-left">
+            <h2 class="text-3xl font-serif text-earth-900 mb-6">Our Mission</h2>
+            <p class="text-lg text-earth-700 mb-8 leading-relaxed">
+              At Fieldwork, we believe that meaningful change happens at the intersection of expertise and community engagement. Our mission is to empower communities through hands-on projects that create sustainable environmental and social benefits.
+            </p>
+            <p class="text-lg text-earth-700 leading-relaxed">
+              We work alongside local stakeholders to develop and implement solutions that address real needs while building capacity for long-term stewardship and self-sufficiency.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Values Section -->
+  <section class="py-16 bg-earth-50 relative">
+    <div class="texture-overlay opacity-5"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-serif text-earth-900 mb-4" data-aos="fade-up">Our Core Values</h2>
+        <p class="text-lg text-earth-700" data-aos="fade-up" data-aos-delay="100">
+          These principles guide everything we do, from project selection to implementation
+        </p>
+      </div>
+      
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div 
+            class="bg-white p-8 rounded-lg shadow-md relative overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="absolute top-0 right-0 w-24 h-24 bg-forest-100 rounded-full -mr-12 -mt-12"></div>
+            <div class="relative">
+              <div class="bg-forest-100 p-3 rounded-full inline-block mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-earth-900 mb-3">Community-Centered</h3>
+              <p class="text-earth-700">
+                We prioritize community involvement in every stage of our projects, from planning to evaluation, ensuring solutions are relevant and embraced locally.
+              </p>
+            </div>
+          </div>
+          
+          <div 
+            class="bg-white p-8 rounded-lg shadow-md relative overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="absolute top-0 right-0 w-24 h-24 bg-forest-100 rounded-full -mr-12 -mt-12"></div>
+            <div class="relative">
+              <div class="bg-forest-100 p-3 rounded-full inline-block mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h.5A2.5 2.5 0 0120 5.5v-1.56" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0116.07 4H19a2 2 0 012 2v1a2 2 0 01-2 2h-1a2 2 0 00-2 2v1a2 2 0 01-2 2H15M5 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0112.07 4H13" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-earth-900 mb-3">Environmental Stewardship</h3>
+              <p class="text-earth-700">
+                We implement practices that restore and protect natural systems, recognizing the intrinsic connection between environmental and community wellbeing.
+              </p>
+            </div>
+          </div>
+          
+          <div 
+            class="bg-white p-8 rounded-lg shadow-md relative overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="absolute top-0 right-0 w-24 h-24 bg-forest-100 rounded-full -mr-12 -mt-12"></div>
+            <div class="relative">
+              <div class="bg-forest-100 p-3 rounded-full inline-block mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-forest-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-medium text-earth-900 mb-3">Integrity & Transparency</h3>
+              <p class="text-earth-700">
+                We operate with honesty and openness, sharing our successes and learning from our challenges. We hold ourselves accountable to our partners and communities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Team Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-serif text-earth-900 mb-4" data-aos="fade-up">Our Team</h2>
+        <p class="text-lg text-earth-700" data-aos="fade-up" data-aos-delay="100">
+          Meet the passionate individuals who bring expertise and dedication to our fieldwork
+        </p>
+      </div>
+      
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {teamMembers.map((member, index) => (
+            <div 
+              class="bg-earth-50 rounded-lg overflow-hidden shadow-md transition-transform hover:-translate-y-2 duration-300"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <img 
+                src={member.image} 
+                alt={member.name} 
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-medium text-earth-900 mb-1">{member.name}</h3>
+                <p class="text-forest-600 text-sm mb-4">{member.role}</p>
+                <p class="text-earth-700 text-sm">{member.bio}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Timeline Section -->
+  <section class="py-16 bg-earth-50 relative">
+    <div class="texture-overlay opacity-5"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-serif text-earth-900 mb-4" data-aos="fade-up">Our Journey</h2>
+        <p class="text-lg text-earth-700" data-aos="fade-up" data-aos-delay="100">
+          Key milestones in our organization's history
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-earth-200"></div>
+        
+        {milestones.map((milestone, index) => (
+          <div 
+            class={`relative z-10 mb-12 ${index % 2 === 0 ? 'md:text-right' : ''}`}
+            data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+          >
+            <div class={`flex items-center ${index % 2 === 0 ? 'md:justify-end' : ''} mb-4`}>
+              <div class={`bg-forest-600 text-white text-sm font-bold px-4 py-2 rounded ${index % 2 === 0 ? 'md:order-2 md:ml-4' : 'md:mr-4'}`}>
+                {milestone.year}
+              </div>
+              <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-vibrant-500 rounded-full border-4 border-white"></div>
+            </div>
+            
+            <div class={`md:w-5/12 ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'} bg-white p-6 rounded-lg shadow-md`}>
+              <h3 class="text-xl font-medium text-earth-900 mb-2">{milestone.title}</h3>
+              <p class="text-earth-700">{milestone.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="py-16 bg-clay-600 text-white relative">
+    <div class="texture-overlay opacity-10"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-serif mb-6" data-aos="fade-up">Join Our Mission</h2>
+        <p class="text-xl text-white/80 mb-8" data-aos="fade-up" data-aos-delay="100">
+          Whether you're looking to partner on a project, volunteer your time, or support our work, we'd love to connect with you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+          <a 
+            href="/contact" 
+            class="px-8 py-3 bg-white text-clay-700 rounded-md hover:bg-white/90 transition-colors text-lg font-medium"
+          >
+            Get in Touch
+          </a>
+          <a 
+            href="/gallery" 
+            class="px-8 py-3 border-2 border-white/70 text-white rounded-md hover:bg-white/10 transition-colors text-lg font-medium"
+          >
+            Explore Our Work
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

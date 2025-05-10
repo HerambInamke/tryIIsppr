@@ -1,0 +1,72 @@
+---
+const testimonials = [
+  {
+    quote: "Their fieldwork approach completely transformed our community garden project. The team's expertise and hands-on involvement made all the difference.",
+    author: "Sarah Johnson",
+    role: "Community Leader",
+    image: "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=300"
+  },
+  {
+    quote: "We've partnered with Fieldwork on multiple conservation initiatives, and their dedication to sustainable practices is unmatched in the industry.",
+    author: "Michael Chen",
+    role: "Environmental Director",
+    image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300"
+  },
+  {
+    quote: "The knowledge and skills our team gained through Fieldwork's training programs have been invaluable for our ongoing environmental restoration efforts.",
+    author: "Elena Rodriguez",
+    role: "Project Manager",
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300"
+  }
+];
+---
+
+<section class="py-20 bg-white relative">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-serif text-earth-900 mb-4" data-aos="fade-up">What People Are Saying</h2>
+      <p class="text-lg text-earth-700" data-aos="fade-up" data-aos-delay="100">
+        Hear from partners and community members who have experienced the impact of our fieldwork firsthand.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class="bg-earth-50 rounded-lg p-8 shadow-md relative"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <div class="absolute top-0 left-10 transform -translate-y-1/2 text-6xl text-clay-300 font-serif">"</div>
+          <blockquote class="mb-6 relative">
+            <p class="text-earth-700 italic">{testimonial.quote}</p>
+          </blockquote>
+          <div class="flex items-center">
+            <img 
+              src={testimonial.image} 
+              alt={testimonial.author} 
+              class="w-12 h-12 rounded-full object-cover mr-4"
+            />
+            <div>
+              <div class="font-medium text-earth-900">{testimonial.author}</div>
+              <div class="text-sm text-earth-600">{testimonial.role}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <a 
+        href="/testimonials" 
+        class="inline-flex items-center px-5 py-3 border border-earth-300 text-earth-700 rounded-md hover:bg-earth-200 transition-colors text-center font-medium"
+        data-aos="fade-up"
+      >
+        Read More Testimonials
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

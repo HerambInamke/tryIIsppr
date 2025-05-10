@@ -1,0 +1,161 @@
+---
+const navItems = [
+  { label: "Home", url: "/" },
+  { label: "Gallery", url: "/gallery" },
+  { label: "About", url: "/about" },
+  { label: "Testimonials", url: "/testimonials" },
+  { label: "Contact", url: "/contact" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center gap-3 group">
+          <span class="font-serif italic font-bold text-2xl text-forest-700 transition-colors group-hover:text-forest-800">Fieldwork</span>
+        </a>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <div class="flex md:hidden">
+        <button 
+          type="button" 
+          id="mobile-menu-button" 
+          class="text-gray-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-forest-500 rounded-md p-2 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <div class="w-6 h-6 flex flex-col justify-center space-y-1.5 relative">
+            <span class="block w-full h-0.5 bg-current transform transition-transform origin-right"></span>
+            <span class="block w-full h-0.5 bg-current transition-opacity"></span>
+            <span class="block w-full h-0.5 bg-current transform transition-transform origin-right"></span>
+          </div>
+        </button>
+      </div>
+      
+      <!-- Desktop menu -->
+      <nav class="hidden md:flex md:space-x-8">
+        {navItems.map((item) => (
+          <a 
+            href={item.url} 
+            class={`relative text-base font-medium px-3 py-2 transition-colors group ${
+              currentPath === item.url ? "text-forest-700" : "text-earth-700 hover:text-forest-500"
+            }`}
+          >
+            {item.label}
+            <span class={`absolute bottom-0 left-0 w-full h-0.5 bg-forest-500 transform origin-left transition-transform duration-300 ${
+              currentPath === item.url ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+            }`}></span>
+          </a>
+        ))}
+        <a 
+          href="/contact#form" 
+          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-forest-600 hover:bg-forest-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-forest-500 transition-all duration-300 hover:scale-105"
+        >
+          Get Started
+        </a>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Mobile menu -->
+  <div 
+    id="mobile-menu" 
+    class="fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+  >
+    <div class="p-4">
+      <div class="flex justify-end">
+        <button 
+          id="close-mobile-menu" 
+          class="text-gray-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-forest-500 rounded-md p-2 transition-colors"
+          aria-label="Close menu"
+        >
+          <span class="sr-only">Close menu</span>
+          <div class="w-6 h-6 flex items-center justify-center">
+            <span class="block w-full h-0.5 bg-current transform rotate-45 absolute"></span>
+            <span class="block w-full h-0.5 bg-current transform -rotate-45 absolute"></span>
+          </div>
+        </button>
+      </div>
+      
+      <nav class="mt-8">
+        <div class="flex flex-col space-y-4">
+          {navItems.map((item) => (
+            <a 
+              href={item.url} 
+              class={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                currentPath === item.url ? "text-forest-700 bg-forest-50" : "text-earth-800 hover:bg-earth-50"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+          <a 
+            href="/contact#form" 
+            class="px-3 py-2 bg-forest-600 text-white rounded-md hover:bg-forest-700 transition-colors text-base font-medium text-center mt-4"
+          >
+            Get Started
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Mobile menu overlay -->
+  <div 
+    id="mobile-menu-overlay" 
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+  ></div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const navbar = document.getElementById('navbar');
+  
+  const toggleMobileMenu = (show) => {
+    if (show) {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+  };
+  
+  mobileMenuButton?.addEventListener('click', () => toggleMobileMenu(true));
+  closeMobileMenuButton?.addEventListener('click', () => toggleMobileMenu(false));
+  mobileMenuOverlay?.addEventListener('click', () => toggleMobileMenu(false));
+  
+  // Handle navbar background change on scroll
+  const updateNavbar = () => {
+    if (window.scrollY > 10) {
+      navbar?.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-md');
+    } else {
+      navbar?.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-md');
+    }
+  };
+  
+  window.addEventListener('scroll', updateNavbar);
+  updateNavbar(); // Set initial state
+  
+  // Handle escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      toggleMobileMenu(false);
+    }
+  });
+  
+  // Handle reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (prefersReducedMotion.matches) {
+    mobileMenu.style.transitionDuration = '0s';
+    mobileMenuOverlay.style.transitionDuration = '0s';
+  }
+</script>
